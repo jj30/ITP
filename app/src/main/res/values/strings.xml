@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">ITP</string>
+    <string name="action_settings">Settings</string>
+    <string name="return_from_web_service">[ { "Category": "Sports Equipment", "Subcategory": "Soccer" }, { "Category": "Computer Software", "Subcategory": "Windows 7" } ]</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="sign_in_w_google">Sign in with Google</string>
+    <string name="signed_in_fmt">Signed in as: %s</string>
+    <string name="title_activity_gsign_in">GSignInActivity</string>
+    <string name="desc_google_icon">Google Logo</string>
+    <string name="title_text">Google Sign-In\nQuickstart</string>
+    <string name="signed_out">Signed out</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="server_client_id"></string>
+</resources>
