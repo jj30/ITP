@@ -24,5 +24,17 @@
     <string name="signed_out">Signed out</string>
     <string name="sign_out">Sign Out</string>
     <string name="disconnect">Disconnect</string>
-    <string name="server_client_id"></string>
+    <string name="title_activity_nav">NavActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="button_browse_text">Browse</string>
+    <string name="button_home_text">Home</string>
+    <string name="button_log_in_text">Log in</string>
+    <string name="button_about_text">About ITP/Bldg5</string>
+    <string name="title_activity_browse_items">BrowseItemsActivity</string>
+    <string name="title_activity_items_in_category">ItemsInCategory</string>
+    <string name="title_activity_coach_browse_items">CoachBrowseItems</string>
 </resources>
