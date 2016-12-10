@@ -24,6 +24,7 @@
     <string name="signed_out">Signed out</string>
     <string name="sign_out">Sign Out</string>
     <string name="disconnect">Disconnect</string>
+    <string name="server_client_id">926848099806-6j6ukl601hsmu0s5cr3lfsl45k3rkk2h.apps.googleusercontent.com</string>
     <string name="title_activity_nav">NavActivity</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>

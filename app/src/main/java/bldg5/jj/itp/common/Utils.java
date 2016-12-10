@@ -1,4 +1,4 @@
-package bldg5.jj.itp.blg5.jj.itp.common;
+package bldg5.jj.itp.common;
 
 
 import android.content.Context;

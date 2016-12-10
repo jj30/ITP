@@ -19,11 +19,13 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 
-import bldg5.jj.itp.blg5.jj.itp.common.StylizedFrameLayout;
-import bldg5.jj.itp.blg5.jj.itp.common.Utils;
+import bldg5.jj.itp.common.BaseDrawerActivity;
+import bldg5.jj.itp.common.StylizedFrameLayout;
+import bldg5.jj.itp.common.Utils;
 
 
-public class BrowseItemsActivity extends AppCompatActivity {
+public class BrowseItemsActivity  extends BaseDrawerActivity
+{
     private String strJson = "";
     private static String TAG = "BrowseItemsActivity";
 
@@ -192,15 +194,3 @@ public class BrowseItemsActivity extends AppCompatActivity {
         }
     }
 }
-
-
-///////////////// frameLayoutLeft.setLayoutParams(layoutParamsWWeight);
-///////////////// frameLayoutRight.setLayoutParams(layoutParamsWWeight);
-// programmatically set the FrameLayout weight
-/////////////////
-// you're going to programmatically set the FrameLayout weight?
-// you need to create layoutparams for the parent type: TableRow
-// http://stackoverflow.com/questions/11963465/android-layoutparams-for-textview-makes-the-view-disappear-programatically#11971553
-///////////////// TableRow.LayoutParams layoutParamsWWeight = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.MATCH_PARENT, 1.0f);
-///////////////// layoutParamsWWeight.gravity = Gravity.CENTER | Gravity.BOTTOM;
-
