@@ -15,16 +15,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 
-import bldg5.jj.itp.common.BaseDrawerActivity;
+import bldg5.jj.itp.common.BaseNavDrawer;
 
-public class MainActivity extends BaseDrawerActivity {
+public class MainActivity extends BaseNavDrawer {
+       // implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.nav_toolbar);
-        setSupportActionBar(toolbar);
+        super.onCreate(savedInstanceState);
 
         Button btnBrowse = (Button) findViewById(R.id.btnBrowse);
 
@@ -35,55 +34,5 @@ public class MainActivity extends BaseDrawerActivity {
                 MainActivity.this.startActivity(intentBrowse);
             }
         });
-    }
-
-    @Override
-    public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
-
-        if (id == R.id.nav_browse) {
-            // Handle the camera action
-        } else if (id == R.id.nav_home) {
-        } else if (id == R.id.nav_log_in) {
-        } else if (id == R.id.nav_about) {
-        }
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
     }
 }

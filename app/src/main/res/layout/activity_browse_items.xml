@@ -7,7 +7,9 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:openDrawer="start">
-        <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+    <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
@@ -33,31 +35,32 @@
 
         <!--Below is the transparent layout positioned at startup -->
         <RelativeLayout
+            android:id="@+id/overlay"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#B0000000"
-            android:id="@+id/overlay">
+            android:background="#B0000000">
+
             <TextView
+                android:id="@+id/textView3"
+                style="@style/TextAppearance.AppCompat.Large"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="80dp"
-                android:textColor="#FFFFFF"
                 android:text="\n\n\n\n\nLong click a category to remove it permanently."
-                style="@style/TextAppearance.AppCompat.Large"
-                android:id="@+id/textView3">
-            </TextView>
+                android:textColor="#FFFFFF"></TextView>
 
             <Button
-                android:text="Ok"
+                android:id="@+id/btnOk"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@+id/textView3"
                 android:layout_alignParentEnd="true"
-                android:layout_marginEnd="60dp"
                 android:layout_marginBottom="110dp"
-                android:id="@+id/btnOk" />
+                android:layout_marginEnd="60dp"
+                android:text="Ok" />
 
         </RelativeLayout>
+
     </android.support.design.widget.CoordinatorLayout>
 
     <android.support.design.widget.NavigationView

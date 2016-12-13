@@ -19,20 +19,19 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 
-import bldg5.jj.itp.common.BaseDrawerActivity;
+import bldg5.jj.itp.common.BaseNavDrawer;
 import bldg5.jj.itp.common.StylizedFrameLayout;
 import bldg5.jj.itp.common.Utils;
 
 
-public class BrowseItemsActivity  extends BaseDrawerActivity
-{
+public class BrowseItemsActivity extends BaseNavDrawer {
     private String strJson = "";
     private static String TAG = "BrowseItemsActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_browse_items);
+        super.onCreate(savedInstanceState);
 
         final RelativeLayout overlay = (RelativeLayout) findViewById(R.id.overlay);
 
@@ -194,3 +193,7 @@ public class BrowseItemsActivity  extends BaseDrawerActivity
         }
     }
 }
+
+
+
+

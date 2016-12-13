@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "926848099806",
+    "project_id": "firebase-itpo"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:926848099806:android:37433e922aa50f5b",
+        "android_client_info": {
+          "package_name": "bldg5.jj.itp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "926848099806-6j6ukl601hsmu0s5cr3lfsl45k3rkk2h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "bldg5.jj.itp",
+            "certificate_hash": "D8B8B91AB3206FFC905110E84C757D75210A6AA2"
+          }
+        },
+        {
+          "client_id": "926848099806-e8992g82a1e0spa7lanevk8pp8jvrg7t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAynMe6jk-hec-DnGNDdHiF_190s6aJ-A4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
