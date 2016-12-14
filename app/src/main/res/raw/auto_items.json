@@ -1,0 +1,54 @@
+{
+  "auto_items": [
+    {
+      "id" : 8,
+      "photo": "https://top10perfect.com/wp-content/uploads/2015/10/B00Q4DX0FO.jpg",
+      "title": "Windshield Ice and Snow Cover",
+      "replacement_value": "12.99",
+      "value_units" : "dollars",
+      "viewed": "15",
+      "condition": "New",
+      "description": "If you are tired of scraping snow and ice off your windshield, then you need this protector for snow and ice."
+    },
+    {
+      "id" : 9,
+      "photo": "https://ae01.alicdn.com/kf/HTB1MB6EJpXXXXbUXVXXq6xXFXXXk/Jordan-Jumpman-Ho-Car-Auto-Fashion-Pendant-JDM-Interior-Rear-View-font-b-Mirror-b-font.jpg",
+      "title": "Chain for Car Mirror. NBA Dunker.",
+      "replacement_value": "19.99",
+      "value_units" : "dollars",
+      "viewed": "50",
+      "condition": "New",
+      "description": "This is a car mirror ornament. A basketball player is dunking a basketball."
+    },
+    {
+      "id" : 10,
+      "photo": "https://s-media-cache-ak0.pinimg.com/236x/82/61/a3/8261a3e98573ea865d51242a56ab5cbc.jpg",
+      "title": "Wheel cover / warmer",
+      "replacement_value": "6.00",
+      "value_units" : "dollars",
+      "viewed": "5",
+      "condition": "Used",
+      "description": "This is a nice, used wheel cover that doesn't match my new car."
+    },
+    {
+      "id" : 11,
+      "photo": "http://contentinfo.autozone.com/znetcs/product-info/en/US/tor/T84025/image/3/",
+      "title": "Car jack",
+      "replacement_value": "130.00",
+      "value_units" : "dollars",
+      "viewed": "67",
+      "condition": "New",
+      "description": "Car jack is rated 2.5 tons. Hydraulic, Ram piston, Aluminum/Steel. Handle length is 48.0 inches, max height is 18.13 inches, min height is 4.0 inches. This jack has a quick release. No caryring handle, and no interchangeable saddle."
+    },
+    {
+      "id" : 12,
+      "photo": "https://chivethethrottle.files.wordpress.com/2011/04/deep-dish-500-dsc01978wtmk.jpg",
+      "title": "Deep Dish Black and Yellow Rims",
+      "replacement_value": "230.00",
+      "value_units" : "dollars",
+      "viewed": "127",
+      "condition": "Used",
+      "description": "These are deep dish, black and yellow rims."
+    }
+  ]
+}
