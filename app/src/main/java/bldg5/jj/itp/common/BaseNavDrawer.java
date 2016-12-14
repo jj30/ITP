@@ -2,22 +2,24 @@ package bldg5.jj.itp.common;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.design.widget.NavigationView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 
+import bldg5.jj.itp.AboutBldg5Activity;
 import bldg5.jj.itp.BrowseItemsActivity;
+import bldg5.jj.itp.LoginActivity;
 import bldg5.jj.itp.MainActivity;
 import bldg5.jj.itp.R;
 
-public abstract class BaseNavDrawer extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public abstract class BaseNavDrawer
+        extends AppCompatActivity
+        implements NavigationView.OnNavigationItemSelectedListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,7 +81,9 @@ public abstract class BaseNavDrawer extends AppCompatActivity implements Navigat
         } else if (id == R.id.nav_home) {
             intentBrowse = new Intent(this, MainActivity.class);
         } else if (id == R.id.nav_log_in) {
+            intentBrowse = new Intent(this, LoginActivity.class);
         } else if (id == R.id.nav_about) {
+            intentBrowse = new Intent(this, AboutBldg5Activity.class);
         }
 
         this.startActivity(intentBrowse);

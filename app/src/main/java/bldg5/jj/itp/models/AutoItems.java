@@ -1,9 +1,11 @@
 package bldg5.jj.itp.models;
 
-import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+
 import org.apache.commons.lang3.builder.ToStringBuilder;
+
+import java.util.List;
 
 public class AutoItems {
 

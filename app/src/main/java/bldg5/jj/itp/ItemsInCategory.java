@@ -1,31 +1,24 @@
 package bldg5.jj.itp;
 
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.view.View;
-import android.widget.ProgressBar;
+import android.widget.Toast;
+
+import com.google.gson.Gson;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import java.io.BufferedReader;
+
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
 import bldg5.jj.itp.common.BaseNavDrawer;
 import bldg5.jj.itp.common.OnItemClickListener;
 import bldg5.jj.itp.common.Utils;
 import bldg5.jj.itp.models.AutoItem;
-import android.widget.Toast;
-
-import com.google.gson.Gson;
 
 // http://stacktips.com/tutorials/android/android-recyclerview-example
 public class ItemsInCategory extends BaseNavDrawer {

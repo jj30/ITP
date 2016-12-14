@@ -17,7 +17,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".LoginActivity"
-            android:label="@string/title_activity_login">
+            android:label="@string/title_activity_login" />
 
             <!--
             This should be the default activity upon deployment j@j, hello
@@ -26,7 +26,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
             -->
-        </activity>
         <activity
             android:name=".GSignInActivity"
             android:label="@string/title_activity_gsign_in"
@@ -39,6 +38,10 @@
         <activity
             android:name=".BrowseItemsActivity"
             android:label="@string/title_activity_browse_items"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AboutBldg5Activity"
+            android:label="@string/title_about_bldg5"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ItemsInCategory"
