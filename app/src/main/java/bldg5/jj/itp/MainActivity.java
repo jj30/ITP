@@ -16,6 +16,8 @@ public class MainActivity extends BaseNavDrawer {
         super.onCreate(savedInstanceState);
 
         Button btnBrowse = (Button) findViewById(R.id.btnBrowse);
+        Button btnLogin = (Button) findViewById(R.id.btnLogin);
+        Button btnAbout = (Button) findViewById(R.id.btnAbout);
 
         btnBrowse.setOnClickListener(new View.OnClickListener() {
             @Override
