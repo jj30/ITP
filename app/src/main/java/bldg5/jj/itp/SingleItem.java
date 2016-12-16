@@ -1,17 +1,12 @@
 package bldg5.jj.itp;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.net.Uri;
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.squareup.picasso.Picasso;
@@ -25,9 +20,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import bldg5.jj.itp.R;
 import bldg5.jj.itp.common.BaseNavDrawer;
 import bldg5.jj.itp.common.Utils;
+import bldg5.jj.itp.databinding.ActivitySingleItemBinding;
 import bldg5.jj.itp.models.AutoItem;
 
 public class SingleItem extends BaseNavDrawer {
@@ -35,13 +30,16 @@ public class SingleItem extends BaseNavDrawer {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_single_item);
+
+        // set the binding for the toolbar
+        ActivitySingleItemBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_single_item);
+        //setSupportActionBar(binding.toolbar);
+
+        // now run the base's onCreate
         super.onCreate(savedInstanceState);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
         Intent intent = getIntent();
         Integer nId = intent.getExtras().getInt("ID");
-
 
         String strJson = "";
 
@@ -63,9 +61,22 @@ public class SingleItem extends BaseNavDrawer {
             Integer nFindItemById = listAutoItems.indexOf(new AutoItem(nId));
             AutoItem autoItem = listAutoItems.get(nFindItemById);
 
+            // databind the autoItem
+            binding.included.setAutoItem(autoItem);
+
             // finally show the image
             ImageView imgView = (ImageView) findViewById(R.id.single_item_thumb);
             Picasso.with(this).load(autoItem.getPhoto()).into(imgView);
+
+            // bind the button
+            Button btnWant = binding.included.btnWant;
+            btnWant.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Toast toast = Toast.makeText(getApplicationContext(), "You must be logged in to do that.", Toast.LENGTH_LONG);
+                    toast.show();
+                }
+            });
         } catch (JSONException ex) {
             ex.printStackTrace();
         }
