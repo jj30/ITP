@@ -46,4 +46,5 @@
     <string name="drawer_item_4">About</string>
 
     <string name="about_building5">Building 5 is just a vehicle for my Android experience. You really should hire me, though. I am janjansz90210@gmail.com</string>
+    <string name="title_activity_single_item">Single Item View</string>
 </resources>

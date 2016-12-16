@@ -26,5 +26,21 @@ public class MainActivity extends BaseNavDrawer {
                 MainActivity.this.startActivity(intentBrowse);
             }
         });
+
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentBrowse = new Intent(MainActivity.this, LoginActivity.class);
+                MainActivity.this.startActivity(intentBrowse);
+            }
+        });
+
+        btnAbout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentBrowse = new Intent(MainActivity.this, AboutBldg5Activity.class);
+                MainActivity.this.startActivity(intentBrowse);
+            }
+        });
     }
 }

@@ -1,9 +1,9 @@
 package bldg5.jj.itp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.widget.Toast;
 
 import com.google.gson.Gson;
 
@@ -57,16 +57,20 @@ public class ItemsInCategory extends BaseNavDrawer {
             adapter.setOnItemClickListener(new OnItemClickListener() {
                 @Override
                 public void onItemClick(AutoItem item) {
-                    Toast.makeText(ItemsInCategory.this, item.getTitle(), Toast.LENGTH_LONG).show();
+                    // Toast.makeText(ItemsInCategory.this, item.getTitle(), Toast.LENGTH_LONG).show();
+                    Integer nId = item.getId();
+                    Bundle bundle = new Bundle();
+                    bundle.putInt("ID", nId);
 
+                    Intent intentSingleItem = new Intent(getApplicationContext(), SingleItem.class);
+                    intentSingleItem.putExtras(bundle);
+                    ItemsInCategory.this.startActivity(intentSingleItem);
                 }
             });
         } catch (JSONException e) {
             e.printStackTrace();
         }
     }
-
-
 }
 
 /*

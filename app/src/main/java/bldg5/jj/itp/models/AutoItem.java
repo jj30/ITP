@@ -4,6 +4,8 @@ package bldg5.jj.itp.models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 public class AutoItem {
@@ -32,6 +34,10 @@ public class AutoItem {
     @SerializedName("description")
     @Expose
     private String description;
+
+    public AutoItem(Integer nID) {
+        this.id = nID;
+    }
 
     /**
      *
@@ -182,4 +188,37 @@ public class AutoItem {
         return ToStringBuilder.reflectionToString(this);
     }
 
+
+    @Override
+    public int hashCode() {
+        return new HashCodeBuilder().append(id).toHashCode();
+
+        /*      .append(photo)
+                .append(title)
+                .append(replacementValue)
+                .append(valueUnits)
+                .append(viewed)
+                .append(condition)
+                .append(description)*/
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        if (other == this) {
+            return true;
+        }
+        if ((other instanceof AutoItem) == false) {
+            return false;
+        }
+        AutoItem rhs = ((AutoItem) other);
+        return new EqualsBuilder().append(id, rhs.id).isEquals();
+
+                /*.append(photo, rhs.photo)
+                .append(title, rhs.title)
+                .append(replacementValue, rhs.replacementValue)
+                .append(valueUnits, rhs.valueUnits)
+                .append(viewed, rhs.viewed)
+                .append(condition, rhs.condition)
+                .append(description, rhs.description)*/
+    }
 }
