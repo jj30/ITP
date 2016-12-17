@@ -38,7 +38,7 @@ public class ItemsInCategory extends BaseNavDrawer {
         String strJson = "";
 
         try {
-            strJson = Utils.getJSONFromRaw(this.getApplicationContext(), R.raw.auto_items);
+            strJson = Utils.getJSONFromRaw(this.getApplicationContext(), R.raw.items);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -46,7 +46,7 @@ public class ItemsInCategory extends BaseNavDrawer {
         JSONObject json = null;
         try {
             json = new JSONObject(strJson);
-            JSONArray jArray = json.getJSONArray("auto_items");
+            JSONArray jArray = json.getJSONArray("items");
             Gson gson = new Gson();
 
             // List<AutoItem> listAutoItems = new ArrayList<AutoItem>();

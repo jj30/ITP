@@ -12,7 +12,7 @@ public class AutoItems {
 
 
 
-    @SerializedName("auto_items")
+    @SerializedName("items")
     @Expose
     private List<AutoItem> autoItems = null;
 
@@ -28,7 +28,7 @@ public class AutoItems {
     /**
      *
      * @param autoItems
-     * The auto_items
+     * The items
      */
     public void setAutoItems(List<AutoItem> autoItems) {
         this.autoItems = autoItems;
