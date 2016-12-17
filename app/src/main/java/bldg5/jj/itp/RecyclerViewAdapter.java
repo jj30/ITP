@@ -15,14 +15,14 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 import bldg5.jj.itp.common.OnItemClickListener;
-import bldg5.jj.itp.models.AutoItem;
+import bldg5.jj.itp.models.Item;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.CustomViewHolder> {
-    private List<AutoItem> feedItemList;
+    private List<Item> feedItemList;
     private Context mContext;
     private OnItemClickListener onItemClickListener;
 
-    public RecyclerViewAdapter(Context context, List<AutoItem> feedItemList) {
+    public RecyclerViewAdapter(Context context, List<Item> feedItemList) {
         this.feedItemList = feedItemList;
         this.mContext = context;
     }
@@ -36,13 +36,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(CustomViewHolder customViewHolder, int i) {
-        final AutoItem feedItem = feedItemList.get(i);
+        final Item feedItem = feedItemList.get(i);
 
         //Download image using picasso library
         if (!TextUtils.isEmpty(feedItem.getPhoto())) {
             Picasso.with(mContext).load(feedItem.getPhoto())
-                    .error(R.drawable.sports)
-                    .placeholder(R.drawable.sports)
+                    .error(R.drawable.loading)
+                    .placeholder(R.drawable.loading)
                     .into(customViewHolder.imageView);
         }
 

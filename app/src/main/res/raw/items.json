@@ -1,4 +1,131 @@
 {
+  "collectibles_items": [
+    {
+      "id" : 13,
+      "photo": "http://www.baconsports.com/wp-content/uploads/2013/05/rodney-craig-baseball-card.jpg",
+      "title": "Rodney Craig Baseball Card -- Cleveland Indians",
+      "replacement_value": "3.50",
+      "value_units" : "dollars",
+      "viewed": "25",
+      "condition": "Good",
+      "description": "This is a non-signed Rod Craig Cleveland Indians baseball card, remembered because it captures him mid-blink."
+    },
+    {
+      "id" : 14,
+      "photo": "https://s-media-cache-ak0.pinimg.com/236x/26/a9/71/26a971ab22525799ff25a03f40a18e38.jpg",
+      "title": "Australia Postage Stamp with Kangaroo",
+      "replacement_value": "10.00",
+      "value_units" : "dollars",
+      "viewed": "25",
+      "condition": "Used",
+      "description": "This is a canceled (used) 6 pence Australian Stamp, featuring a Kangaroo. The stamp was used in 1929."
+    },
+    {
+      "id" : 15,
+      "photo": "http://cdn.bgasc.com/images/uploads/G_MPLE_2014_1_OZ-01-popup.jpg",
+      "title": "Canada Maple Leaf -- 9999 Gold 1 Ounce",
+      "replacement_value": "1200.00",
+      "value_units" : "dollars",
+      "viewed": "5",
+      "condition": "New",
+      "description": "2014, Elizabeth II, 50 dollars gold maple leaf with 'gold mark' on the obverse. The mark contains a maple leaf with a 14 inside."
+    }
+  ],
+  "sports_items": [
+    {
+      "id" : 16,
+      "photo": "http://www.hoyquehay.net/wordpress/wp-content/uploads/2014/06/Brazuca-466x466.jpg",
+      "title": "Brazuca Soccer ball",
+      "replacement_value": "20.00",
+      "value_units" : "dollars",
+      "viewed": "8",
+      "condition": "New",
+      "description": "Never used, non-inflated 2014 World Cup Brazuca soccer ball."
+    },
+    {
+      "id" : 17,
+      "photo": "http://i.ebayimg.com/00/s/MTYwMFgxMDg3/z/CWsAAOSwhOVXcb3V/$_57.JPG?set_id=880000500F",
+      "title": "Mark Messier Action Figure",
+      "replacement_value": "20.00",
+      "value_units" : "dollars",
+      "viewed": "9",
+      "condition": "New",
+      "description": "Never used, Mark Messier action figure, still in box!"
+    },{
+      "id" : 18,
+      "photo": "http://i.ebayimg.com/00/s/MTE3MlgxMjY0/z/OlkAAOSw-kdXywfn/$_35.JPG?set_id=8800005007",
+      "title": "Ft. Lauderdale Strikers Jersey - Mens Small",
+      "replacement_value": "15.00",
+      "value_units" : "dollars",
+      "viewed": "11",
+      "condition": "Used",
+      "description": "Ft. Lauderdale Strikers jersey, worn on and off for about a year. Then I got fat, and now it wont fit. My gain is your gain."
+    },
+    {
+      "id" : 19,
+      "photo": "http://www.dickssportinggoods.com/graphics/product_images/pDSP1-22875125p275w.jpg",
+      "title": "Sher-Wood Hockey Stick 5030",
+      "replacement_value": "20.00",
+      "value_units" : "dollars",
+      "viewed": "8",
+      "condition": "New",
+      "description": "I'm moving so I have to get rid of it. It's a Senior 5030 Heritage Wood Ice Hockey Stick."
+    }
+  ],
+  "optics_items": [
+    {
+      "id" : 20,
+      "photo": "http://www.dickssportinggoods.com/graphics/product_images/pDSP1-17065063p275w.jpg",
+      "title": "Night Vision Monocular",
+      "replacement_value": "160.00",
+      "value_units" : "dollars",
+      "viewed": "80",
+      "condition": "Used",
+      "description": "Gently used ATN DNVM-4 Digital NV 4x Color Night Vision Monocular. Full color display!"
+    },
+    {
+      "id" : 21,
+      "photo": "https://images-na.ssl-images-amazon.com/images/I/4177CW6RHZL.jpg",
+      "title": "Bushnell Falcon Binoculars (7 x 35)",
+      "replacement_value": "20.00",
+      "value_units" : "dollars",
+      "viewed": "8",
+      "condition": "New",
+      "description": "Bushness Falcon Binoculars with case, 7x magnification, 35 mm lense diameter."
+    },
+    {
+      "id" : 22,
+      "photo": "http://www.highpointscientific.com/media/catalog/product/cache/image/345x/9df78eab33525d08d6e5fb8d27136e95/3/1/31042_astromaster_114eq_1_5.jpg",
+      "title": "Celestron AstroMaster Telescope",
+      "replacement_value": "150.00",
+      "value_units" : "dollars",
+      "viewed": "8",
+      "condition": "Used",
+      "description": "Great beginner telescope. Full specs: 114 mm Reflector Telescope. No parts are missing, good as new."
+    }
+  ],
+  "electronics_items": [
+    {
+      "id" : 23,
+      "photo": "http://media.digikey.com/Photos/Sunon%20Photos/M40-SERIES.jpg",
+      "title": "Sunon Computer Fan",
+      "replacement_value": "6.00",
+      "value_units" : "dollars",
+      "viewed": "3",
+      "condition": "New",
+      "description": "New computer fan. Brushless. 12 V DC. 40 mm by 40 mm."
+    },
+    {
+      "id" : 24,
+      "photo": "http://www.htc.com/managed-assets/shared/desktop/smartphones/htc-one-m8/pdp/image/gallery/main-1.jpg",
+      "title": "HTC One M8",
+      "replacement_value": "160.00",
+      "value_units" : "dollars",
+      "viewed": "30",
+      "condition": "New",
+      "description": "32 g storage HTC One M8. Gunmetal Gray. Android LTE phone, unlocked."
+    }
+  ],
   "auto_items": [
     {
       "id" : 8,
@@ -49,6 +176,122 @@
       "viewed": "127",
       "condition": "Used",
       "description": "These are deep dish, black and yellow rims."
+    }
+  ],
+  "clothing_items": [
+    {
+      "id" : 25,
+      "photo": "http://p2.la-img.com/930/16511/5468068_1_l.jpg",
+      "title": "Croc Skin Suit",
+      "replacement_value": "330.00",
+      "value_units" : "dollars",
+      "viewed": "12",
+      "condition": "New",
+      "description": "This is a croc skin suit, very much like the one Chris Tucker wore in Rush Hour 2."
+    },
+    {
+      "id" : 26,
+      "photo": "https://www.lucchese.com/media/cache/db/00/db004be1fc6e4af031cd2ac54bfafbea.jpg",
+      "title": "Cowboy Boots, Handmade in TX",
+      "replacement_value": "650.00",
+      "value_units" : "dollars",
+      "viewed": "12",
+      "condition": "New",
+      "description": "Size 12 Mens US; Shaft size is 1 foot (haha). Two shades of brown, barrel brown on the bottom, and dark brown on the top."
+    }
+  ],
+  "art_items": [
+    {
+      "id" : 27,
+      "photo": "http://i.ebayimg.com/00/s/NTQ5WDg3NQ==/z/ljQAAOSwQTVV7~38/$_32.JPG?set_id=880000500F",
+      "title": "Replica Aztec Mask",
+      "replacement_value": "10.00",
+      "value_units" : "dollars",
+      "viewed": "12",
+      "condition": "New",
+      "description": "Mask is about 8 inches square and homemade in the style of the Aztec indians."
+    },
+    {
+      "id": 28,
+      "photo": "https://st.hzcdn.com/simgs/1c51f23f0318caf8_4-3756/traditional-home-decor.jpg",
+      "title": "Chinese Dragon Statue",
+      "replacement_value": "210.00",
+      "value_units" : "dollars",
+      "viewed": "2",
+      "condition": "New",
+      "description": "Pewter status of a dragon in the Chinese style. About 5 lbs, 4 inches high (the head), 8 inches high (the tail), and the base is 8 x 5 inches."
+    }
+  ],
+  "home_items": [
+    {
+      "id": 29,
+      "photo": "http://i.ebayimg.com/00/s/MTAwMFgxMDAw/z/rwgAAOSw5cNYM70Z/$_57.JPG?set_id=8800005007",
+      "title": "Outdoor couch cushions",
+      "replacement_value": "40.00",
+      "value_units" : "dollars",
+      "viewed": "3",
+      "condition": "New",
+      "description": "40 for the pair of outdoor couch cushions, off-white. 16 inches square, 7.5 inches thick."
+    }
+  ],
+  "office_items": [
+    {
+      "id": 30,
+      "photo": "https://images-na.ssl-images-amazon.com/images/I/81%2BTKpspbIL._SL1500_.jpg",
+      "title": "Amazon Paper Shredder",
+      "replacement_value": "20.00",
+      "value_units" : "dollars",
+      "viewed": "3",
+      "condition": "Used",
+      "description": "Amazon brand paper shredder, used for about two years now, for papers with sensitive data. Still has plenty of life left."
+    }
+  ],
+  "baby_items": [
+    {
+      "id": 31,
+      "photo": "https://images-na.ssl-images-amazon.com/images/I/71Y%2Bw7ayX8L._UY879_.jpg",
+      "title": "6 mos. Baby Boy One piece",
+      "replacement_value": "15.00",
+      "value_units" : "dollars",
+      "viewed": "3",
+      "condition": "New",
+      "description": "Baby boy one-piece for a boy about 6 months old. Winter style."
+    }
+  ],
+  "media_items": [
+    {
+      "id": 32,
+      "photo": "https://images-na.ssl-images-amazon.com/images/I/51J4M0ET6WL.jpg",
+      "title": "Rush Hour 2 DVD",
+      "replacement_value": "5.00",
+      "value_units" : "dollars",
+      "viewed": "1",
+      "condition": "New",
+      "description": "Rush Hour 2 on DVD, brand new."
+    }
+  ],
+  "hardware_items": [
+    {
+      "id": 33,
+      "photo": "http://www.techtoolsupply.com/v/vspfiles/photos/LEM-TQ-7-16-2.jpg",
+      "title": "30 lb torque wrench",
+      "replacement_value": "35.00",
+      "value_units" : "dollars",
+      "viewed": "2",
+      "condition": "New",
+      "description": "Lemco 30 lb torque wrench. TQ-7/16, weighs 8 oz."
+    }
+  ],
+  "marine_items": [
+    {
+      "id": 33,
+      "photo": "https://i5.walmartimages.com/asr/1349b11c-018c-4e09-bc64-19fc3c4f9553_1.015ef7952affd8971325f811054c92c7.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF",
+      "title": "Sun Dolphin 5-Person Pedal Boat w Canopy",
+      "replacement_value": "335.00",
+      "value_units" : "dollars",
+      "viewed": "2",
+      "condition": "Used",
+      "description": "Sun Dolphin 5-Person Sun Slider Pedal Boat with Canopy. Good for exercise if you have a pond. Some algae on the canopy doesn't want to come off."
     }
   ]
 }

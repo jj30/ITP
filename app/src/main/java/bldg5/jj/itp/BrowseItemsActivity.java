@@ -11,6 +11,7 @@ import android.widget.RelativeLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -127,23 +128,10 @@ public class BrowseItemsActivity extends BaseNavDrawer {
 
         // add this to a framelayout
         StylizedFrameLayout frameLayoutLeft = new StylizedFrameLayout(this);
-        frameLayoutLeft.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                boolean bOverlayOn = overlay.getVisibility() == View.VISIBLE;
 
-                // cancel the touch if the overlay is on
-                if (!bOverlayOn) {
-                    Bundle bundlePassVals = new Bundle();
-                    bundlePassVals.putString("category", strColumn1);
-
-                    Intent intentBrowse = new Intent(BrowseItemsActivity.this, ItemsInCategory.class);
-                    intentBrowse.putExtras(bundlePassVals);
-
-                    BrowseItemsActivity.this.startActivity(intentBrowse);
-                }
-            }
-        });
+        // we pass the overlay because if it's showing, we cancel the event.
+        frameLayoutLeft.setOnClickListener(addFrameLayoutListener(overlay, strColumn1));
+        frameLayoutLeft.setOnLongClickListener(addLongClickListener(overlay, strColumn1));
 
         if (strColumn2.length() > 0) {
             // right cell
@@ -156,23 +144,10 @@ public class BrowseItemsActivity extends BaseNavDrawer {
             tvRight.setCompoundDrawablesWithIntrinsicBounds(res2ID, 0, 0, 0);
 
             StylizedFrameLayout frameLayoutRight = new StylizedFrameLayout(this);
-            frameLayoutRight.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    boolean bOverlayOn = overlay.getVisibility() == View.VISIBLE;
 
-                    // cancel the touch if the overlay is on
-                    if (!bOverlayOn) {
-                        Bundle bundlePassVals = new Bundle();
-                        bundlePassVals.putString("category", strColumn2);
-
-                        Intent intentBrowse = new Intent(BrowseItemsActivity.this, ItemsInCategory.class);
-                        intentBrowse.putExtras(bundlePassVals);
-
-                        BrowseItemsActivity.this.startActivity(intentBrowse);
-                    }
-                }
-            });
+            // we pass the overlay because if it's showing, we cancel the event.
+            frameLayoutRight.setOnClickListener(addFrameLayoutListener(overlay, strColumn2));
+            frameLayoutRight.setOnLongClickListener(addLongClickListener(overlay, strColumn2));
 
             frameLayoutRight.addView(tvRight);
             tr.addView(frameLayoutRight);
@@ -182,6 +157,41 @@ public class BrowseItemsActivity extends BaseNavDrawer {
         tr.addView(frameLayoutLeft);
 
         tableLayout.addView(tr, trLayoutParams);
+    }
+
+    private View.OnClickListener addFrameLayoutListener(final RelativeLayout overlay, final String strColumn) {
+         return new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                boolean bOverlayOn = overlay.getVisibility() == View.VISIBLE;
+
+                // cancel the touch if the overlay is on
+                if (!bOverlayOn) {
+                    Bundle bundlePassVals = new Bundle();
+                    bundlePassVals.putString("category", strColumn);
+
+                    Intent intentBrowse = new Intent(BrowseItemsActivity.this, ItemsInCategory.class);
+                    intentBrowse.putExtras(bundlePassVals);
+
+                    BrowseItemsActivity.this.startActivity(intentBrowse);
+                }
+            }
+        };
+    }
+
+    private View.OnLongClickListener addLongClickListener(final RelativeLayout overlay, final String strColumn) {
+        return new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+.                boolean bOverlayOn = overlay.getVisibility() == View.VISIBLE;
+
+                // cancel the touch if the overlay is on
+                if (!bOverlayOn) {
+                    Toast.makeText(getApplicationContext(), "TODO: REMOVE '" + strColumn + "' FROM DISPLAY TILES.", Toast.LENGTH_LONG).show();
+                }
+                return false;
+            }
+        };
     }
 
     private void setTextAppearance(TextView tv) {

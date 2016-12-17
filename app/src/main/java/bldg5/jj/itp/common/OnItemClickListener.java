@@ -1,8 +1,8 @@
 package bldg5.jj.itp.common;
 
 
-import bldg5.jj.itp.models.AutoItem;
+import bldg5.jj.itp.models.Item;
 
 public interface OnItemClickListener {
-    void onItemClick(AutoItem item);
+    void onItemClick(Item item);
 }

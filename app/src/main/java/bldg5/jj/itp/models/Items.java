@@ -7,31 +7,17 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import java.util.List;
 
-public class AutoItems {
-
-
-
-
+public class Items {
     @SerializedName("items")
     @Expose
-    private List<AutoItem> autoItems = null;
+    private List<Item> items = null;
 
-    /**
-     *
-     * @return
-     * The autoItems
-     */
-    public List<AutoItem> getAutoItems() {
-        return autoItems;
+    public List<Item> getItems() {
+        return items;
     }
 
-    /**
-     *
-     * @param autoItems
-     * The items
-     */
-    public void setAutoItems(List<AutoItem> autoItems) {
-        this.autoItems = autoItems;
+    public void setItems(List<Item> items) {
+        this.items = items;
     }
 
     @Override

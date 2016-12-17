@@ -18,12 +18,12 @@ import java.util.List;
 import bldg5.jj.itp.common.BaseNavDrawer;
 import bldg5.jj.itp.common.OnItemClickListener;
 import bldg5.jj.itp.common.Utils;
-import bldg5.jj.itp.models.AutoItem;
+import bldg5.jj.itp.models.Item;
 
 // http://stacktips.com/tutorials/android/android-recyclerview-example
 public class ItemsInCategory extends BaseNavDrawer {
     private static final String TAG = "RecyclerViewExample";
-    private List<AutoItem> feedsList;
+    private List<Item> feedsList;
     private RecyclerView mRecyclerView;
     private RecyclerViewAdapter adapter;
 
@@ -31,6 +31,9 @@ public class ItemsInCategory extends BaseNavDrawer {
     protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_items_in_category);
         super.onCreate(savedInstanceState);
+
+        Intent intent = getIntent();
+        String strCategory = intent.getStringExtra("category").toLowerCase();
 
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -46,24 +49,25 @@ public class ItemsInCategory extends BaseNavDrawer {
         JSONObject json = null;
         try {
             json = new JSONObject(strJson);
-            JSONArray jArray = json.getJSONArray("items");
+            JSONArray jArray = json.getJSONArray(strCategory + "_items");
             Gson gson = new Gson();
 
             // List<AutoItem> listAutoItems = new ArrayList<AutoItem>();
-            feedsList = Arrays.asList(gson.fromJson(String.valueOf(jArray), AutoItem[].class));
+            feedsList = Arrays.asList(gson.fromJson(String.valueOf(jArray), Item[].class));
 
             adapter = new RecyclerViewAdapter(ItemsInCategory.this, feedsList);
             mRecyclerView.setAdapter(adapter);
             adapter.setOnItemClickListener(new OnItemClickListener() {
                 @Override
-                public void onItemClick(AutoItem item) {
+                public void onItemClick(Item item) {
                     // Toast.makeText(ItemsInCategory.this, item.getTitle(), Toast.LENGTH_LONG).show();
-                    Integer nId = item.getId();
+                    // Integer nId = item.getId();
                     Bundle bundle = new Bundle();
-                    bundle.putInt("ID", nId);
+                    bundle.putSerializable("item", item);
 
                     Intent intentSingleItem = new Intent(getApplicationContext(), SingleItem.class);
                     intentSingleItem.putExtras(bundle);
+
                     ItemsInCategory.this.startActivity(intentSingleItem);
                 }
             });

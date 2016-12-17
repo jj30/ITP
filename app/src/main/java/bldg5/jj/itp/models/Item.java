@@ -8,7 +8,11 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-public class AutoItem {
+import java.io.Serializable;
+
+public class Item
+        implements Serializable
+{
 
     @SerializedName("id")
     @Expose
@@ -35,150 +39,70 @@ public class AutoItem {
     @Expose
     private String description;
 
-    public AutoItem(Integer nID) {
+    public Item(Integer nID) {
         this.id = nID;
     }
 
-    /**
-     *
-     * @return
-     * The id
-     */
     public Integer getId() {
         return id;
     }
 
-    /**
-     *
-     * @param id
-     * The id
-     */
     public void setId(Integer id) {
         this.id = id;
     }
 
-    /**
-     *
-     * @return
-     * The photo
-     */
     public String getPhoto() {
         return photo;
     }
 
-    /**
-     *
-     * @param photo
-     * The photo
-     */
     public void setPhoto(String photo) {
         this.photo = photo;
     }
 
-    /**
-     *
-     * @return
-     * The title
-     */
     public String getTitle() {
         return title;
     }
 
-    /**
-     *
-     * @param title
-     * The title
-     */
     public void setTitle(String title) {
         this.title = title;
     }
 
-    /**
-     *
-     * @return
-     * The replacementValue
-     */
     public String getReplacementValue() {
         return replacementValue;
     }
 
-    /**
-     *
-     * @param replacementValue
-     * The replacement_value
-     */
     public void setReplacementValue(String replacementValue) {
         this.replacementValue = replacementValue;
     }
 
-    /**
-     *
-     * @return
-     * The valueUnits
-     */
     public String getValueUnits() {
         return valueUnits;
     }
 
-    /**
-     *
-     * @param valueUnits
-     * The value_units
-     */
     public void setValueUnits(String valueUnits) {
         this.valueUnits = valueUnits;
     }
 
-    /**
-     *
-     * @return
-     * The viewed
-     */
     public String getViewed() {
         return viewed;
     }
 
-    /**
-     *
-     * @param viewed
-     * The viewed
-     */
     public void setViewed(String viewed) {
         this.viewed = viewed;
     }
 
-    /**
-     *
-     * @return
-     * The condition
-     */
     public String getCondition() {
         return condition;
     }
 
-    /**
-     *
-     * @param condition
-     * The condition
-     */
     public void setCondition(String condition) {
         this.condition = condition;
     }
 
-    /**
-     *
-     * @return
-     * The description
-     */
     public String getDescription() {
         return description;
     }
 
-    /**
-     *
-     * @param description
-     * The description
-     */
     public void setDescription(String description) {
         this.description = description;
     }
@@ -207,10 +131,10 @@ public class AutoItem {
         if (other == this) {
             return true;
         }
-        if ((other instanceof AutoItem) == false) {
+        if ((other instanceof Item) == false) {
             return false;
         }
-        AutoItem rhs = ((AutoItem) other);
+        Item rhs = ((Item) other);
         return new EqualsBuilder().append(id, rhs.id).isEquals();
 
                 /*.append(photo, rhs.photo)
