@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 
 import com.mikepenz.fontawesome_typeface_library.FontAwesome;
@@ -22,6 +23,8 @@ import bldg5.jj.itp.R;
 
 public abstract class BaseNavDrawer
         extends AppCompatActivity  {
+    protected Drawer result;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +39,7 @@ public abstract class BaseNavDrawer
         SecondaryDrawerItem aboutDrawerItem = new SecondaryDrawerItem().withIdentifier(4).withName(R.string.drawer_item_4);
 
         //create the drawer and remember the `Drawer` result object
-        Drawer result = new DrawerBuilder()
+        result = new DrawerBuilder()
             .withActivity(this)
             .withToolbar(toolbar)
             .addDrawerItems(
@@ -52,7 +55,9 @@ public abstract class BaseNavDrawer
                     // Handle navigation view item clicks here.
                     Intent intentBrowse = null;
 
-                    if (position == 0) {
+                    if (position == -1) {
+                        intentBrowse = new Intent(view.getContext(), LoginActivity.class);
+                    } else if (position == 0) {
                         intentBrowse = new Intent(view.getContext(), MainActivity.class);
                         // drawer divider item is position 1
                         // } else if (position == 1) {

@@ -2,7 +2,7 @@
   "collectibles_items": [
     {
       "id" : 13,
-      "photo": "http://www.baconsports.com/wp-content/uploads/2013/05/rodney-craig-baseball-card.jpg",
+      "photos": ["http://www.baconsports.com/wp-content/uploads/2013/05/rodney-craig-baseball-card.jpg", "http://www.tradingcarddb.com/Images/Cards/Baseball/91/91-515Bk.jpg"],
       "title": "Rodney Craig Baseball Card -- Cleveland Indians",
       "replacement_value": "3.50",
       "value_units" : "dollars",

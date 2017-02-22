@@ -183,7 +183,7 @@ public class BrowseItemsActivity extends BaseNavDrawer {
         return new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
-.                boolean bOverlayOn = overlay.getVisibility() == View.VISIBLE;
+                boolean bOverlayOn = overlay.getVisibility() == View.VISIBLE;
 
                 // cancel the touch if the overlay is on
                 if (!bOverlayOn) {

@@ -214,7 +214,7 @@ public class LoginActivity extends BaseNavDrawer implements LoaderCallbacks<Curs
     }
 
     private boolean isPasswordValid(String password) {
-        //TODO: Replace this with your own logic
+        //TODO: Replace this with your own logic -- schema related
         return true;
     }
 
@@ -288,6 +288,17 @@ public class LoginActivity extends BaseNavDrawer implements LoaderCallbacks<Curs
 
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        switch(resultCode) {
+            case -1:
+                setResult(-1);
+                this.finish();
+                break;
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
     private void addEmailsToAutoComplete(List<String> emailAddressCollection) {
         //Create adapter to tell the AutoCompleteTextView what to show in its dropdown list.
         ArrayAdapter<String> adapter =
@@ -328,7 +339,7 @@ public class LoginActivity extends BaseNavDrawer implements LoaderCallbacks<Curs
 
             try {
                 // Simulate network access.
-                Thread.sleep(2000);
+                Thread.sleep(1);
             } catch (InterruptedException e) {
                 return false;
             }
@@ -354,6 +365,7 @@ public class LoginActivity extends BaseNavDrawer implements LoaderCallbacks<Curs
                 finish();
 
                 Intent intentBrowse = new Intent(LoginActivity.this, MainActivity.class);
+                intentBrowse.putExtra("logged-in", true);
                 LoginActivity.this.startActivity(intentBrowse);
             } else {
                 mPasswordView.setError(getString(R.string.error_incorrect_password));
