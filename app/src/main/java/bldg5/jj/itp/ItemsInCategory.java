@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
+import bldg5.jj.itp.adapters.RecyclerViewAdapter;
 import bldg5.jj.itp.common.BaseNavDrawer;
 import bldg5.jj.itp.common.OnItemClickListener;
 import bldg5.jj.itp.common.Utils;
@@ -36,6 +37,7 @@ public class ItemsInCategory extends BaseNavDrawer {
         String strCategory = intent.getStringExtra("category").toLowerCase();
 
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         String strJson = "";
@@ -52,7 +54,6 @@ public class ItemsInCategory extends BaseNavDrawer {
             JSONArray jArray = json.getJSONArray(strCategory + "_items");
             Gson gson = new Gson();
 
-            // List<AutoItem> listAutoItems = new ArrayList<AutoItem>();
             feedsList = Arrays.asList(gson.fromJson(String.valueOf(jArray), Item[].class));
 
             adapter = new RecyclerViewAdapter(ItemsInCategory.this, feedsList);
@@ -76,78 +77,3 @@ public class ItemsInCategory extends BaseNavDrawer {
         }
     }
 }
-
-/*
-    private void parseResult(String result) {
-        try {
-            JSONObject response = new JSONObject(result);
-            JSONArray posts = response.optJSONArray("posts");
-            feedsList = new ArrayList<>();
-
-            for (int i = 0; i < posts.length(); i++) {
-                JSONObject post = posts.optJSONObject(i);
-                AutoItem item = new AutoItem();
-                item.setTitle(post.optString("title"));
-                item.setPhoto(post.optString("thumbnail"));
-                feedsList.add(item);
-            }
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public class DownloadTask extends AsyncTask<String, Void, Integer> {
-
-        @Override
-        protected void onPreExecute() {
-            progressBar.setVisibility(View.VISIBLE);
-        }
-
-        @Override
-        protected Integer doInBackground(String... params) {
-            Integer result = 0;
-            HttpURLConnection urlConnection;
-            try {
-                URL url = new URL(params[0]);
-                urlConnection = (HttpURLConnection) url.openConnection();
-                int statusCode = urlConnection.getResponseCode();
-
-                // 200 represents HTTP OK
-                if (statusCode == 200) {
-                    BufferedReader r = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
-                    StringBuilder response = new StringBuilder();
-                    String line;
-                    while ((line = r.readLine()) != null) {
-                        response.append(line);
-                    }
-                    parseResult(response.toString());
-                    result = 1; // Successful
-                } else {
-                    result = 0; //"Failed to fetch data!";
-                }
-            } catch (Exception e) {
-                Log.d(TAG, e.getLocalizedMessage());
-            }
-            return result; //"Failed to fetch data!";
-        }
-
-        @Override
-        protected void onPostExecute(Integer result) {
-            progressBar.setVisibility(View.GONE);
-
-            if (result == 1) {
-                adapter = new RecyclerViewAdapter(ItemsInCategory.this, feedsList);
-                mRecyclerView.setAdapter(adapter);
-                adapter.setOnItemClickListener(new OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AutoItem item) {
-                        Toast.makeText(ItemsInCategory.this, item.getTitle(), Toast.LENGTH_LONG).show();
-
-                    }
-                });
-
-            } else {
-                Toast.makeText(ItemsInCategory.this, "Failed to fetch data!", Toast.LENGTH_SHORT).show();
-            }
-        }
-    }*/

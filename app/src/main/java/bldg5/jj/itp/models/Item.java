@@ -9,6 +9,9 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import java.io.Serializable;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Item
         implements Serializable
@@ -17,9 +20,9 @@ public class Item
     @SerializedName("id")
     @Expose
     private Integer id;
-    @SerializedName("photo")
+    @SerializedName("photos")
     @Expose
-    private String photo;
+    private String[] photo;
     @SerializedName("title")
     @Expose
     private String title;
@@ -52,12 +55,22 @@ public class Item
     }
 
     public String getPhoto() {
-        return photo;
+        return photo[0];
     }
 
     public void setPhoto(String photo) {
-        this.photo = photo;
+        this.photo[0] = photo;
     }
+
+
+
+
+
+    public ArrayList<String> getAllPhotos() {
+        return new ArrayList<String>(Arrays.asList(this.photo));
+    }
+
+
 
     public String getTitle() {
         return title;

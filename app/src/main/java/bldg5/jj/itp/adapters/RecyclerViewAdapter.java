@@ -1,6 +1,7 @@
-package bldg5.jj.itp;
+package bldg5.jj.itp.adapters;
 
 import android.content.Context;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Html;
 import android.text.TextUtils;
@@ -9,11 +10,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import bldg5.jj.itp.R;
 import bldg5.jj.itp.common.OnItemClickListener;
 import bldg5.jj.itp.models.Item;
 
@@ -49,13 +53,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         //Setting text view title
         customViewHolder.textView.setText(Html.fromHtml(feedItem.getTitle()));
 
-
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onItemClickListener.onItemClick(feedItem);
             }
         };
+
         customViewHolder.imageView.setOnClickListener(listener);
         customViewHolder.textView.setOnClickListener(listener);
     }
