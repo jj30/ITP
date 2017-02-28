@@ -58,13 +58,6 @@ public class SingleItem extends BaseNavDrawer {
             }
         });
 
-
-
-
-
-
-
-
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view_list);
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));

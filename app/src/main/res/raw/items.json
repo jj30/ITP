@@ -2,7 +2,13 @@
   "collectibles_items": [
     {
       "id" : 13,
-      "photos": ["http://www.baconsports.com/wp-content/uploads/2013/05/rodney-craig-baseball-card.jpg", "http://www.tradingcarddb.com/Images/Cards/Baseball/91/91-515Bk.jpg"],
+      "photos": ["http://www.baconsports.com/wp-content/uploads/2013/05/rodney-craig-baseball-card.jpg",
+        "http://www.tradingcarddb.com/Images/Cards/Baseball/91/91-515Bk.jpg",
+        "http://www.tradingcarddb.com/Images/Cards/Baseball/76343/76343-5505979Fr.jpg",
+        "http://2.bp.blogspot.com/-LXyRWOM5J6s/UmxJcy5tWgI/AAAAAAAABmI/vjCnnEUzoiY/s1600/rodneycraig.jpg",
+        "http://www.trbimg.com/img-5269a47e/turbine/la-hr-rodney-paul-craig-narbonne-20131024/300",
+        "http://www.tradingcarddb.com/Images/Cards/Baseball/135904/135904-9030294Fr.jpg"
+      ],
       "title": "Rodney Craig Baseball Card -- Cleveland Indians",
       "replacement_value": "3.50",
       "value_units" : "dollars",
