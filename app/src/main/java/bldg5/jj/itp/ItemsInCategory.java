@@ -20,6 +20,8 @@ import bldg5.jj.itp.common.BaseNavDrawer;
 import bldg5.jj.itp.common.OnItemClickListener;
 import bldg5.jj.itp.common.Utils;
 import bldg5.jj.itp.models.Item;
+import rx.Observable;
+import rx.Observer;
 
 // http://stacktips.com/tutorials/android/android-recyclerview-example
 public class ItemsInCategory extends BaseNavDrawer {
@@ -40,40 +42,67 @@ public class ItemsInCategory extends BaseNavDrawer {
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+        // feedsList = getFeedItems(strCategory);
+        // rx java, create the publisher
+        createObservable(strCategory);
+
+        adapter = new RecyclerViewAdapter(ItemsInCategory.this, feedsList);
+        mRecyclerView.setAdapter(adapter);
+        adapter.setOnItemClickListener(new OnItemClickListener() {
+            @Override
+            public void onItemClick(Item item) {
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("item", item);
+
+                Intent intentSingleItem = new Intent(getApplicationContext(), SingleItem.class);
+                intentSingleItem.putExtras(bundle);
+
+                ItemsInCategory.this.startActivity(intentSingleItem);
+            }
+        });
+
+    }
+
+    private void createObservable(String strCat) {
+        Observable<List<Item>> listObservable = Observable.just(getFeedItems(strCat));
+
+        listObservable.subscribe(new Observer<List<Item>>() {
+
+            @Override
+            public void onCompleted() {
+
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
+            }
+
+            @Override
+            public void onNext(List<Item> items) {
+                adapter.setItems(items);
+            }
+        });
+
+    }
+
+
+    private List<Item> getFeedItems(String strCat) {
         String strJson = "";
+        JSONObject json = null;
 
         try {
             strJson = Utils.getJSONFromRaw(this.getApplicationContext(), R.raw.items);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        JSONObject json = null;
-        try {
             json = new JSONObject(strJson);
-            JSONArray jArray = json.getJSONArray(strCategory + "_items");
+            JSONArray jArray = json.getJSONArray(strCat + "_items");
             Gson gson = new Gson();
 
             feedsList = Arrays.asList(gson.fromJson(String.valueOf(jArray), Item[].class));
 
-            adapter = new RecyclerViewAdapter(ItemsInCategory.this, feedsList);
-            mRecyclerView.setAdapter(adapter);
-            adapter.setOnItemClickListener(new OnItemClickListener() {
-                @Override
-                public void onItemClick(Item item) {
-                    // Toast.makeText(ItemsInCategory.this, item.getTitle(), Toast.LENGTH_LONG).show();
-                    // Integer nId = item.getId();
-                    Bundle bundle = new Bundle();
-                    bundle.putSerializable("item", item);
-
-                    Intent intentSingleItem = new Intent(getApplicationContext(), SingleItem.class);
-                    intentSingleItem.putExtras(bundle);
-
-                    ItemsInCategory.this.startActivity(intentSingleItem);
-                }
-            });
-        } catch (JSONException e) {
+        } catch (JSONException | IOException e) {
             e.printStackTrace();
         }
+
+        return feedsList;
     }
 }
