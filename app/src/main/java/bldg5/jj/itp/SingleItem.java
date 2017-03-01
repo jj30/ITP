@@ -41,6 +41,9 @@ public class SingleItem extends BaseNavDrawer {
         mTextCondition = (TextView) findViewById(R.id.txtCondition);
         mTextDesc = (TextView) findViewById(R.id.txtDesc);
 
+        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view_list);
+        mRecyclerView.setHasFixedSize(true);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
         createPublisher();
         mPubItemDetails.onNext(auto_item);
@@ -54,13 +57,6 @@ public class SingleItem extends BaseNavDrawer {
                 toast.show();
             }
         });
-
-        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view_list);
-        mRecyclerView.setHasFixedSize(true);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
-
-        adapter = new HListDataAdapter(getApplicationContext(), auto_item.getAllPhotos());
-        mRecyclerView.setAdapter(adapter);
     }
 
     private void createPublisher() {
@@ -80,6 +76,9 @@ public class SingleItem extends BaseNavDrawer {
                 mTextViewed.setText(String.valueOf(nextItem.getViewed()));
                 mTextCondition.setText(String.valueOf(nextItem.getCondition()));
                 mTextDesc.setText(String.valueOf(nextItem.getDescription()));
+
+                adapter = new HListDataAdapter(getApplicationContext(), nextItem.getAllPhotos());
+                mRecyclerView.setAdapter(adapter);
             }
         });
     }
