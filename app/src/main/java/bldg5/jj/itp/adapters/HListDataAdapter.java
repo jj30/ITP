@@ -15,10 +15,13 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 
 import bldg5.jj.itp.R;
+import bldg5.jj.itp.common.OnItemClickListener;
+import bldg5.jj.itp.models.Item;
 
 public class HListDataAdapter extends RecyclerView.Adapter<HListDataAdapter.SingleItemRowHolder> {
     private ArrayList<String> photoURLs;
     private Context mContext;
+    private OnItemClickListener onItemClickListener;
 
     public HListDataAdapter(Context context, ArrayList<String> photoURLs) {
         this.photoURLs = photoURLs;
@@ -35,7 +38,7 @@ public class HListDataAdapter extends RecyclerView.Adapter<HListDataAdapter.Sing
     @Override
     public void onBindViewHolder(SingleItemRowHolder holder, int i) {
         // these components are found in list_row.xml
-        String curPhotoURL = String.valueOf(photoURLs.get(i));
+        final String curPhotoURL = String.valueOf(photoURLs.get(i));
 
         //Download image using picasso library
         if (!TextUtils.isEmpty(curPhotoURL))
@@ -48,6 +51,19 @@ public class HListDataAdapter extends RecyclerView.Adapter<HListDataAdapter.Sing
                 .centerCrop()
                 .into(holder.itemImage);
         }
+
+        View.OnClickListener listener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onItemClickListener.onPhotoClick(curPhotoURL);
+            }
+        };
+
+        holder.itemImage.setOnClickListener(listener);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
+        this.onItemClickListener = onItemClickListener;
     }
 
     @Override

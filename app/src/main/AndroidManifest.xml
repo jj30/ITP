@@ -58,6 +58,10 @@
             android:name=".SingleItem"
             android:label="@string/title_activity_single_item"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".SingleItemSingleImage"
+            android:label="@string/title_activity_single_item_single_image"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

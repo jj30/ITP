@@ -42,7 +42,6 @@ public class ItemsInCategory extends BaseNavDrawer {
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        // feedsList = getFeedItems(strCategory);
         // rx java, create the publisher
         createObservable(strCategory);
 
@@ -59,6 +58,9 @@ public class ItemsInCategory extends BaseNavDrawer {
 
                 ItemsInCategory.this.startActivity(intentSingleItem);
             }
+
+            @Override
+            public void onPhotoClick(String url) {};
         });
 
     }
@@ -69,14 +71,10 @@ public class ItemsInCategory extends BaseNavDrawer {
         listObservable.subscribe(new Observer<List<Item>>() {
 
             @Override
-            public void onCompleted() {
-
-            }
+            public void onCompleted() { }
 
             @Override
-            public void onError(Throwable e) {
-
-            }
+            public void onError(Throwable e) { }
 
             @Override
             public void onNext(List<Item> items) {

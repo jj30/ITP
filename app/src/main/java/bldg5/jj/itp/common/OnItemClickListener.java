@@ -5,4 +5,5 @@ import bldg5.jj.itp.models.Item;
 
 public interface OnItemClickListener {
     void onItemClick(Item item);
+    void onPhotoClick(String url);
 }

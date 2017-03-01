@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import bldg5.jj.itp.adapters.HListDataAdapter;
 import bldg5.jj.itp.common.BaseNavDrawer;
+import bldg5.jj.itp.common.OnItemClickListener;
 import bldg5.jj.itp.models.Item;
 import rx.Observer;
 import rx.subjects.PublishSubject;
@@ -71,13 +72,33 @@ public class SingleItem extends BaseNavDrawer {
 
             @Override
             public void onNext(Item nextItem) {
+                // show this item's details, title, replacement value, etc.
                 mTextTitle.setText(String.valueOf(nextItem.getTitle()));
                 mTextRepValue.setText(String.valueOf(nextItem.getReplacementValue()));
                 mTextViewed.setText(String.valueOf(nextItem.getViewed()));
                 mTextCondition.setText(String.valueOf(nextItem.getCondition()));
                 mTextDesc.setText(String.valueOf(nextItem.getDescription()));
 
+                // the horizontal adapter takes an arraylist of string urls
                 adapter = new HListDataAdapter(getApplicationContext(), nextItem.getAllPhotos());
+
+                // the photo's listener takes to a larger view of the photo (SingleItemSingleImage)
+                adapter.setOnItemClickListener(new OnItemClickListener() {
+                    @Override
+                    public void onItemClick(Item item) {};
+
+                    @Override
+                    public void onPhotoClick(String url) {
+                        Bundle bundle = new Bundle();
+                        bundle.putString("url", url);
+
+                        Intent intentSingleItemSingleImage = new Intent(getApplicationContext(), SingleItemSingleImage.class);
+                        intentSingleItemSingleImage.putExtras(bundle);
+
+                        SingleItem.this.startActivity(intentSingleItemSingleImage);
+                    }
+                });
+
                 mRecyclerView.setAdapter(adapter);
             }
         });
